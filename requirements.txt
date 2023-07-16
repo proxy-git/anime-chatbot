@@ -3,7 +3,7 @@ fastapi
 black
 isort
 websockets
-pydantic
+pydantic==1.10.11
 langchain
 uvicorn
 jinja2
