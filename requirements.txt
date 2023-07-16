@@ -1,3 +1,4 @@
+firebase_functions
 openai
 fastapi
 black
@@ -11,5 +12,5 @@ faiss-cpu
 bs4
 unstructured
 libmagic
-pinecone
-dotenv
+pinecone-client
+python-dotenv
