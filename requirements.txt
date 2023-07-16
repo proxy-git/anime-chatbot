@@ -13,3 +13,6 @@ unstructured
 libmagic
 pinecone-client
 python-dotenv
+uuid
+wikipedia
+tiktoken

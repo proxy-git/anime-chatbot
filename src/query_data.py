@@ -12,9 +12,9 @@ from langchain.llms import OpenAI
 from langchain.vectorstores import Pinecone
 from langchain.embeddings import OpenAIEmbeddings
 import pinecone
-from dotenv import dotenv_values
+from dotenv import dotenv_values,find_dotenv
 
-config = dotenv_values(".env")
+config = dotenv_values(find_dotenv())
 openai_api_key = config["OPENAI_API_KEY"]
 index_name = config['PINECONE_INDEX']
 

@@ -6,15 +6,16 @@ from fastapi.templating import Jinja2Templates
 from langchain.vectorstores import VectorStore
 from langchain.vectorstores import Pinecone
 from langchain.embeddings import OpenAIEmbeddings
-from callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
-from query_data import get_chain
-from schemas import ChatResponse
+from src.callback import QuestionGenCallbackHandler, StreamingLLMCallbackHandler
+from src.query_data import get_chain
+from src.schemas import ChatResponse
 from langchain.document_loaders import WikipediaLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import pinecone
 from pydantic import BaseModel
-from dotenv import dotenv_values
-config = dotenv_values(".env")
+from dotenv import dotenv_values,find_dotenv
+
+config = dotenv_values(find_dotenv())
 openai_api_key = config["OPENAI_API_KEY"]
 index_name = config['PINECONE_INDEX']
 
@@ -30,12 +31,12 @@ class Document(BaseModel):
 
 app = FastAPI()
 origins = [
-    #  "http://localhost:10000",
-    #  "http://127.0.0.1:10000",
-    #  "http://0.0.0.0:10000"
-    #  "http://localhost:9000",
-    #  "http://127.0.0.1:9000",
-    #  "http://0.0.0.0:9000"
+     "http://localhost:10000",
+     "http://127.0.0.1:10000",
+     "http://0.0.0.0:10000"
+     "http://localhost:9000",
+     "http://127.0.0.1:9000",
+     "http://0.0.0.0:9000"
      "3.75.158.163",
      "3.125.183.140",
      "35.157.117.28",
