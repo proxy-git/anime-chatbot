@@ -30,9 +30,16 @@ class Document(BaseModel):
 
 app = FastAPI()
 origins = [
-     "http://localhost:9000",
-     "http://localhost:8080",
-     "http://127.0.0.1:9000"
+    #  "http://localhost:10000",
+    #  "http://127.0.0.1:10000",
+    #  "http://0.0.0.0:10000"
+    #  "http://localhost:9000",
+    #  "http://127.0.0.1:9000",
+    #  "http://0.0.0.0:9000"
+     "3.75.158.163",
+     "3.125.183.140",
+     "35.157.117.28",
+     "https://anime-chatbot.onrender.com/"
 ]
 
 app.add_middleware(
